@@ -5,6 +5,7 @@ import datetime
 import locale
 import sys
 import json
+import PATH
 #import matplotlib.pyplot as plt
 
 
@@ -12,7 +13,7 @@ locale.setlocale(locale.LC_ALL, 'de_DE.utf8')
 Dates=[]
 Inzidenzes=[]
 
-dataFile="/var/www/html/Covid-19/halledeData_Halle_aktuell.json"
+dataFile=PATH.filePath+"halledeData_Halle_aktuell.json"
 
 
 def safeFile(fileName,data):
