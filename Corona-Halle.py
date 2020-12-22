@@ -44,7 +44,6 @@ for oData in oldData:
     Dates.append(oDate)
     Inzidenzes.append(oInzidenz)
     print(oDate,oInzidenz)
-#%%
 
 while nextID not in IDs:
     IDs.append(nextID)
@@ -67,6 +66,9 @@ while nextID not in IDs:
                 date=dates[0]
                 
                 date_tmp=date[:-2]
+                if date_tmp[0]==".":
+                    date_tmp=date.findPrevious().findParent().strong.text+date_tmp
+                
                 if date_tmp[1]==".":
                     date_tmp="0"+date_tmp
                 date_time_obj = datetime.datetime.strptime(date_tmp, '%d. %B %Y')
