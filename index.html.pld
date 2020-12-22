@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="UTF-8">
+	<title>Covid-19 Status Burgenlandkreis</title>
+
+</head>
+
+<body >
+	<h1>Tagesaktuelle Daten zu den Fallzahlen von Covid-19 im Burgenlandkreis</h1>
+	<div id="Daten">	
+	</div>
+	<script>
+		var xmlhttp = new XMLHttpRequest();
+		xmlhttp.onreadystatechange = function() {
+		  if (this.readyState == 4 && this.status == 200) {
+			var myObj = JSON.parse(this.responseText);
+			var anz=myObj.length;
+			var out=document.getElementById("Daten");
+			for (var i=0; i<anz;i++)
+			{
+				var table = document.createElement("TABLE");
+				table.border = "1";
+ 
+				//Get the count of columns.
+				var columnCount = 2;
+ 
+				//Add the header row.
+				var row = table.insertRow(-1);
+				var headerCell1 = document.createElement("TH");
+				headerCell1.innerHTML = "Parameter";
+				row.appendChild(headerCell1);
+				
+				var headerCell2 = document.createElement("TH");
+				headerCell2.innerHTML = "Wert";
+				row.appendChild(headerCell2);
+					
+			//Add the data rows.
+				row = table.insertRow(-1);
+                var cell = row.insertCell(-1);
+                cell.innerHTML = "Aktualisierungsdatum:";
+                var cell = row.insertCell(-1);
+                cell.innerHTML = myObj[i]["last_update"];
+                
+                row = table.insertRow(-1);
+                var cell = row.insertCell(-1);
+                cell.innerHTML = "Anzahl Fälle gesamt:";
+                var cell = row.insertCell(-1);
+                cell.innerHTML = myObj[i]["cases"];
+                
+                row = table.insertRow(-1);
+                var cell = row.insertCell(-1);
+                cell.innerHTML = "Anzahl Fälle je 100.000 Einwohner:";
+                var cell = row.insertCell(-1);
+                cell.innerHTML = Number.parseFloat(myObj[i]["cases_per_100k"]).toFixed(1);
+                
+                row = table.insertRow(-1);
+                var cell = row.insertCell(-1);
+                cell.innerHTML = "Neue Fälle der letzten 7 Tage je 100.000 Einwohner:";
+                var cell = row.insertCell(-1);
+                cell.innerHTML = Number.parseFloat(myObj[i]["cases7_per_100k"]).toFixed(2);
+                
+                var dvTable = document.getElementById("Daten");
+				dvTable.innerHTML = "";
+				dvTable.appendChild(table);
+                
+            }
+		  }
+        };
+
+		xmlhttp.open("GET", "rkiData_Burgenlandkreis_aktuell.json", true);
+		xmlhttp.send();
+	
+	</script>
+</body>
+
+</html>

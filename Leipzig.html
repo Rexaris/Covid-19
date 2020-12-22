@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="UTF-8">
+	<title>Covid-19 Status Leipzig</title>
+	<script src="Chart.bundle.min.js"></script>
+	<script>
+	function createChart(data)
+	{
+		var dataTmp=[];
+		for(var i=0;i<data.length;i++)
+		{
+			var rawX=data[i]["last_update"];
+			if(rawX=="") continue;
+			var tmpYear=rawX.substring(6, 10);
+			var tmpMonth=rawX.substring(3, 5);
+			var tmpDay=rawX.substring(0, 2);
+			var tmpHour=rawX.substring(12, 14);
+			var tmpMinute=rawX.substring(15, 17);
+			
+			var tmpX=new Date(tmpYear,tmpMonth-1,tmpDay,tmpHour,tmpMinute);
+			var rawY=data[i]["cases7_per_100k"];
+			dataTmp.push({x:tmpX,y:rawY});
+		}
+		
+		var ctx = document.getElementById('myChart');
+		var myChart = new Chart(ctx, {
+			type: 'scatter',
+			data: {
+				datasets:[{
+					label:"Neue Fälle in den letzten 7 Tagen je 100.000 Einwohner",
+					showLine:true,
+					fill:false,
+					data:dataTmp
+				}]
+				},
+			options:{
+				responsive: false,
+				scales: {
+					xAxes: [{
+						type: "time",
+						time: {
+							unit: "day",
+							displayFormats: {
+								day: "DD.MM."
+							}
+						}
+					}]
+				}
+			}
+		});
+	}
+	
+	
+	</script>
+	<style>
+	canvas{
+		  width:800px !important;
+		  height:400px !important;
+		}
+	</style>
+</head>
+
+<body >
+	<h1>Tagesaktuelle Daten zu den Fallzahlen von Covid-19 in Leipzig</h1>
+	<div id="Daten">	
+	</div>
+	<br>	
+	<canvas id="myChart"></canvas>
+	<script>
+		var xmlhttp = new XMLHttpRequest();
+		xmlhttp.onreadystatechange = function() {
+		  if (this.readyState == 4 && this.status == 200) {
+			var myObj = JSON.parse(this.responseText);
+			var anz=myObj.length;
+			var out=document.getElementById("Daten");
+			for (var i=anz-1; i<anz;i++)
+			{
+				var table = document.createElement("TABLE");
+				table.border = "1";
+ 
+				//Get the count of columns.
+				var columnCount = 2;
+ 
+				//Add the header row.
+				var row = table.insertRow(-1);
+				var headerCell1 = document.createElement("TH");
+				headerCell1.innerHTML = "Parameter";
+				row.appendChild(headerCell1);
+				
+				var headerCell2 = document.createElement("TH");
+				headerCell2.innerHTML = "Wert";
+				row.appendChild(headerCell2);
+					
+			//Add the data rows.
+				row = table.insertRow(-1);
+                var cell = row.insertCell(-1);
+                cell.innerHTML = "Aktualisierungsdatum:";
+                var cell = row.insertCell(-1);
+                cell.innerHTML = myObj[i]["last_update"];
+                
+                row = table.insertRow(-1);
+                var cell = row.insertCell(-1);
+                cell.innerHTML = "Anzahl Fälle gesamt:";
+                var cell = row.insertCell(-1);
+                cell.innerHTML = myObj[i]["cases"];
+                
+                row = table.insertRow(-1);
+                var cell = row.insertCell(-1);
+                cell.innerHTML = "Anzahl Fälle je 100.000 Einwohner:";
+                var cell = row.insertCell(-1);
+                cell.innerHTML = Number.parseFloat(myObj[i]["cases_per_100k"]).toFixed(1);
+                
+                row = table.insertRow(-1);
+                var cell = row.insertCell(-1);
+                cell.innerHTML = "Neue Fälle der letzten 7 Tage je 100.000 Einwohner:";
+                var cell = row.insertCell(-1);
+                cell.innerHTML = Number.parseFloat(myObj[i]["cases7_per_100k"]).toFixed(2);
+                
+                var dvTable = document.getElementById("Daten");
+				dvTable.innerHTML = "";
+				dvTable.appendChild(table);
+                createChart(myObj);
+            }
+		  }
+        };
+
+		xmlhttp.open("GET", "rkiData_Leipzig_aktuell.json", true);
+		xmlhttp.send();
+	
+	</script>
+</body>
+
+</html>
