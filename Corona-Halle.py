@@ -13,8 +13,6 @@ locale.setlocale(locale.LC_ALL, 'de_DE.utf8')
 Dates=[]
 Inzidenzes=[]
 
-
-
 filePath = os.path.dirname(sys.argv[0])
 dataFile=filePath+"/halledeData_Halle_aktuell.json"
 
