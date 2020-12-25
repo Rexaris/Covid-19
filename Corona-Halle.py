@@ -62,10 +62,12 @@ while nextID not in IDs:
         first=True
         for p in ps:
             dates=p.find_all(string=re.compile("2020"))
-            if len(dates)==1 and dates[0][-2]==":":
+            if len(dates)==1 and ":" in dates[0]:
                 date=dates[0]
                 
-                date_tmp=date[:-2]
+                date_tmp=date[:date.find(":")]# am Doppelpunkt abtrennen
+                if "(" in date_tmp:# testen ob eine zweite Version zum Datum existiert bspw: "24. Dezember 2020 (2):"
+                    date_tmp=date_tmp[:date_tmp.find("(")-1]
                 if date_tmp[0]==".":
                     date_tmp=date.findPrevious().findParent().strong.text+date_tmp
                 
