@@ -62,14 +62,17 @@ while nextID not in IDs:
         first=True
         for p in ps:
             dates=p.find_all(string=re.compile("2020"))
-            if len(dates)==1 and ":" in dates[0]:
+            dates2=p.find_all(string=re.compile("2021"))
+            dates=dates+dates2
+            if len(dates)==1:
                 date=dates[0]
+                tmpPos=max(date.find("2020"),date.find("2021"))
+                date_tmp=date[:tmpPos+4]
                 
-                date_tmp=date[:date.find(":")]# am Doppelpunkt abtrennen
-                if "(" in date_tmp:# testen ob eine zweite Version zum Datum existiert bspw: "24. Dezember 2020 (2):"
-                    date_tmp=date_tmp[:date_tmp.find("(")-1]
-                if date_tmp[0]==".":
-                    date_tmp=date.findPrevious().findParent().strong.text+date_tmp
+                
+                
+                if date_tmp[0]==".": # für den Fall, dass die Zahl des Tages auf der Website fehlerhaft formatiert ist
+                    date_tmp=date.findPrevious().findParent().strong.text+date_tmp 
                 
                 if date_tmp[1]==".":
                     date_tmp="0"+date_tmp
@@ -83,7 +86,11 @@ while nextID not in IDs:
                     
                     for i in range(50):
                         tmp=tmp.next
+                        if "2020" in tmp or "2021" in tmp:
+                            break
                         if "nzidenz" in tmp:
+                            
+                            
                             x=tmp.find("Einwohner:")+11
                             if x>10:
                                 inzidenz=float(tmp[x:x+8].split(" ")[0].replace(",","."))
