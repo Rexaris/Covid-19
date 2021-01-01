@@ -88,6 +88,7 @@
 		var xmlhttp = new XMLHttpRequest();
 		var xmlhttp2 = new XMLHttpRequest();
 		xmlhttp.onreadystatechange = function() {
+		  checkFinish(xmlhttp,xmlhttp2);
 		  if (this.readyState == 4 && this.status == 200) {
 			var myObj = JSON.parse(this.responseText);
 			var anz=myObj.length;
@@ -138,7 +139,6 @@
                 var dvTable = document.getElementById("Daten");
 				dvTable.innerHTML = "";
 				dvTable.appendChild(table);
-                createChart(myObj);
             }
 		  }
         };
