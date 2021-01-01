@@ -6,9 +6,10 @@
 	<title>Covid-19 Status Burgenlandkreis</title>
 	<script src="Chart.bundle.min.js"></script>
 	<script>
-	function createChart(data)
+	function createChart(data,data2)
 	{
 		var dataTmp=[];
+		var dataTmp2=[];
 		for(var i=0;i<data.length;i++)
 		{
 			var rawX=data[i]["last_update"];
@@ -24,15 +25,30 @@
 			dataTmp.push({x:tmpX,y:rawY});
 		}
 		
+		for(var i=0;i<data2.length;i++)
+		{
+			
+			var tmpX=new Date(data2[i]["year"],data2[i]["month"]-1,data2[i]["day"],data2[i]["hour"],data2[i]["minute"]);
+			var rawY=data2[i]["inzidenz"];
+			dataTmp2.push({x:tmpX,y:rawY});
+		}
+		
 		var ctx = document.getElementById('myChart');
 		var myChart = new Chart(ctx, {
 			type: 'scatter',
 			data: {
 				datasets:[{
-					label:"Neue Fälle in den letzten 7 Tagen je 100.000 Einwohner",
+					label:"Inzidenz RKI",
 					showLine:true,
 					fill:false,
 					data:dataTmp
+				},
+				{
+					label:"Inzidenz Burgenlandkreis.de",
+					showLine:true,
+					fill:false,
+					borderColor:"rgba(255, 0, 0, 0.1)",
+					data:dataTmp2
 				}]
 				},
 			options:{
@@ -70,6 +86,7 @@
 	<canvas id="myChart"></canvas>
 	<script>
 		var xmlhttp = new XMLHttpRequest();
+		var xmlhttp2 = new XMLHttpRequest();
 		xmlhttp.onreadystatechange = function() {
 		  if (this.readyState == 4 && this.status == 200) {
 			var myObj = JSON.parse(this.responseText);
@@ -126,8 +143,21 @@
 		  }
         };
 
+		xmlhttp2.onreadystatechange = function(){checkFinish(xmlhttp,xmlhttp2);};
+	    
+	    function checkFinish(request1,request2){
+			if(request1.readyState==4 && request1.status==200 && request2.readyState==4 && request2.status==200)
+			{
+				createChart(JSON.parse(request1.responseText),JSON.parse(request2.responseText));
+			}
+		}
+		
+	    
+	    
 		xmlhttp.open("GET", "rkiData_Burgenlandkreis_aktuell.json", true);
 		xmlhttp.send();
+		xmlhttp2.open("GET", "burgenlandkreisdeData_Burgenlandkreis_aktuell.json", true);
+		xmlhttp2.send();
 	
 	</script>
 </body>
