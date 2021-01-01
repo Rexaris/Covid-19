@@ -1,5 +1,21 @@
 [
     {
+        "day": 31,
+        "hour": 13,
+        "inzidenz": 220.79,
+        "minute": 0,
+        "month": 12,
+        "year": 2020
+    },
+    {
+        "day": 30,
+        "hour": 13,
+        "inzidenz": 232.43,
+        "minute": 0,
+        "month": 12,
+        "year": 2020
+    },
+    {
         "day": 29,
         "hour": 13,
         "inzidenz": 242.83,
