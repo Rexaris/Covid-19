@@ -113,11 +113,17 @@ try:
                 date=date[:3]+"0"+date[3:]
             date=date[:10]# zu lange Daten abschneiden
             date_time_obj = datetime.datetime.strptime(date, '%d.%m.%Y')
+            ##Prüfen ob Schreibfehler bei Jahreszahl vorkommt
+            if date_time_obj.month<5 and date_time_obj.year==2020:
+                date_time_obj=date_time_obj.replace(year=2021)
+            if date_time_obj.month==1 and date_time_obj.year==2020:
+                debug=date_time_obj
+            
             #print(date_time_obj)
             
             #if date_time_obj not in Dates: #doppelte Einträge verhindern
                 
-            Dates.append(date_time_obj)
+            
             
             # if first==True or tmp_i==5:
             #     first=False
@@ -185,6 +191,16 @@ try:
                     
                 
                 contenti=contenti.next
+            dataExists=False
+            if date_time_obj in Dates:
+                indices=[i for i, x in enumerate(Dates) if x == date_time_obj]
+                for indice in indices:
+                    if Inzidenz_i==Inzidenzes[indice]:
+                        dataExists=True
+                        
+            if dataExists==True:
+                continue
+            Dates.append(date_time_obj)
             Infizierte.append(Infiziert_i)
             Genesene.append(Genesen_i)
             Gestorbene.append(Gestorben_i)
