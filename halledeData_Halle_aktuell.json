@@ -1,5 +1,45 @@
 [
     {
+        "day": 8,
+        "hour": 13,
+        "inzidenz": 297.3,
+        "minute": 0,
+        "month": 1,
+        "year": 2021
+    },
+    {
+        "day": 7,
+        "hour": 13,
+        "inzidenz": 280.67,
+        "minute": 0,
+        "month": 1,
+        "year": 2021
+    },
+    {
+        "day": 6,
+        "hour": 13,
+        "inzidenz": 256.13,
+        "minute": 0,
+        "month": 1,
+        "year": 2021
+    },
+    {
+        "day": 5,
+        "hour": 13,
+        "inzidenz": 228.69,
+        "minute": 0,
+        "month": 1,
+        "year": 2021
+    },
+    {
+        "day": 4,
+        "hour": 13,
+        "inzidenz": 225.78,
+        "minute": 0,
+        "month": 1,
+        "year": 2021
+    },
+    {
         "day": 3,
         "hour": 13,
         "inzidenz": 226.61,
@@ -11,6 +51,14 @@
         "day": 2,
         "hour": 13,
         "inzidenz": 227.03,
+        "minute": 0,
+        "month": 1,
+        "year": 2021
+    },
+    {
+        "day": 1,
+        "hour": 13,
+        "inzidenz": 225.78,
         "minute": 0,
         "month": 1,
         "year": 2021

@@ -44,7 +44,7 @@ for oData in oldData:
     Dates.append(oDate)
     Inzidenzes.append(oInzidenz)
     print(oDate,oInzidenz)
-
+first=True
 while nextID not in IDs:
     IDs.append(nextID)
     fp = urllib.request.urlopen("https://www.halle.de/de/Verwaltung/Presseportal/Nachrichten/?NewsId="+nextID)
@@ -58,17 +58,26 @@ while nextID not in IDs:
     nextID=soup.find(class_="next")["href"][-5:]
     
     
-    try:
-        first=True
-        for p in ps:
-            dates=p.find_all(string=re.compile("2020"))
-            dates2=p.find_all(string=re.compile("2021"))
-            dates=dates+dates2
-            if len(dates)==1:
-                date=dates[0]
+    
+        
+    if first==True:
+        debug=ps[:]
+        first=False
+    for p in ps:
+        dates=p.find_all(string=re.compile("2020"))
+        dates2=p.find_all(string=re.compile("2021"))
+        dates=dates+dates2
+        j=0
+        while j < len(dates)-1:
+            if dates[j].parent.name!="strong":
+                del dates[j]
+            j+=1
+        for date in dates:
+            try:
+                #date=dates[0]
                 tmpPos=max(date.find("2020"),date.find("2021"))
                 date_tmp=date[:tmpPos+4]
-                
+                print("\tDate:",date_tmp)
                 
                 
                 if date_tmp[0]==".": # für den Fall, dass die Zahl des Tages auf der Website fehlerhaft formatiert ist
@@ -77,17 +86,19 @@ while nextID not in IDs:
                 if date_tmp[1]==".":
                     date_tmp="0"+date_tmp
                 date_time_obj = datetime.datetime.strptime(date_tmp, '%d. %B %Y')
-                #print(date_time_obj)
+                print(date_time_obj)
                 if date_time_obj not in Dates:
                     
                     Dates.append(date_time_obj)
                     Inzidenzes.append(0)
                     tmp=date
                     
-                    for i in range(50):
+                    for i in range(150):
                         tmp=tmp.next
                         if "2020" in tmp or "2021" in tmp:
-                            break
+                            if tmp.parent.name=="strong":
+                                print("\tAbgebrochen:",tmp)
+                                break
                         if "nzidenz" in tmp:
                             
                             
@@ -99,11 +110,12 @@ while nextID not in IDs:
                                 print(date)
                                 print(inzidenz)
                                 print(IDs[-1])
-                
+                                break
+                    
                     first=False
-           
-    except:
-        print("Unexpected error:", sys.exc_info())
+       
+            except:
+                print("Unexpected error:", sys.exc_info())
 #var tmpX=new Date(tmpYear,tmpMonth-1,tmpDay,tmpHour,tmpMinute);
 #%%
 JSONArray=[]
