@@ -22,6 +22,20 @@ NeuInfektionen=[]
 filePath = os.path.dirname(sys.argv[0])
 dataFile=filePath+"/burgenlandkreisdeData_Burgenlandkreis_aktuell.json"
 
+def loadFile(filename):
+    try:
+        with open(filename,"a+") as infile:
+            infile.seek(0)
+            oldData=json.load(infile)
+    except json.JSONDecodeError:
+        oldData=[]
+        safeFile(filename,oldData)
+    
+    resultData=[]
+    for data in oldData:#doppelte Einträge entfernen
+        if data not in resultData:
+            resultData.append(data)
+    return resultData
 
 def safeFile(fileName,data):
     data=sorted(data,key=lambda k:datetime.datetime(k["year"],k["month"],k["day"]),reverse=True)
@@ -54,13 +68,8 @@ def extractLastFloat(text):
         return -1
     return float(resultText.replace(",","."))
 
-try:
-    with open(dataFile,"a+") as infile:
-        infile.seek(0)
-        oldData=json.load(infile)
-except json.JSONDecodeError:
-    oldData=[]
-    safeFile(dataFile,oldData)
+
+oldData=loadFile(dataFile)
 
 
 for oData in oldData:
