@@ -6,7 +6,7 @@ import locale
 import sys
 import json
 import os
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 
 
 locale.setlocale(locale.LC_ALL, 'de_DE.utf8')
@@ -20,6 +20,7 @@ NeuInfektionen=[]
 
 
 filePath = os.path.dirname(sys.argv[0])
+print("filePath:",filePath)
 dataFile=filePath+"/burgenlandkreisdeData_Burgenlandkreis_aktuell.json"
 
 def loadFile(filename):
@@ -246,10 +247,10 @@ safeFile(dataFile, JSONArray)
 
 #print(Dates)
 #print(Inzidenzes)
-plt.plot(Dates,Infizierte,label="Infizierte")
-plt.plot(Dates,Genesene,label="Genesene")
-plt.plot(Dates,Gestorbene,label="Gestorbene")
-plt.plot(Dates,AktuellInfizierte,label="Aktuelle Infektionen")
-plt.plot(Dates,NeuInfektionen,label="Neuinfektionen")
-plt.plot(Dates,Inzidenzes,label="7-Tage-Inzidenz")
-plt.legend()
+#plt.plot(Dates,Infizierte,label="Infizierte")
+#plt.plot(Dates,Genesene,label="Genesene")
+#plt.plot(Dates,Gestorbene,label="Gestorbene")
+#plt.plot(Dates,AktuellInfizierte,label="Aktuelle Infektionen")
+#plt.plot(Dates,NeuInfektionen,label="Neuinfektionen")
+#plt.plot(Dates,Inzidenzes,label="7-Tage-Inzidenz")
+#plt.legend()

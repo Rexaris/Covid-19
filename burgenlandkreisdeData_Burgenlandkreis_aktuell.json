@@ -1,21 +1,5 @@
 [
     {
-        "day": 7,
-        "hour": 0,
-        "inzidenz": 216.39,
-        "minute": 0,
-        "month": 1,
-        "year": 2021
-    },
-    {
-        "day": 5,
-        "hour": 0,
-        "inzidenz": 228.69,
-        "minute": 0,
-        "month": 1,
-        "year": 2021
-    },
-    {
         "day": 4,
         "hour": 0,
         "inzidenz": 242.67,
@@ -24,9 +8,19 @@
         "year": 2021
     },
     {
-        "day": 31,
+
+        "day": 30,
         "hour": 0,
         "inzidenz": 224.22,
+        "minute": 0,
+        "month": 12,
+        "year": 2020
+    },
+    {
+        "day": 30,
+        "hour": 0,
+        "inzidenz": 244.34,
+
         "minute": 0,
         "month": 12,
         "year": 2020
@@ -67,6 +61,22 @@
         "day": 29,
         "hour": 0,
         "inzidenz": 249.94,
+        "minute": 0,
+        "month": 12,
+        "year": 2020
+    },
+    {
+        "day": 29,
+        "hour": 0,
+        "inzidenz": 249.94,
+        "minute": 0,
+        "month": 12,
+        "year": 2020
+    },
+    {
+        "day": 28,
+        "hour": 0,
+        "inzidenz": 277.89,
         "minute": 0,
         "month": 12,
         "year": 2020
@@ -168,6 +178,16 @@
         "year": 2020
     },
     {
+
+        "day": 16,
+        "hour": 0,
+        "inzidenz": 256.65,
+        "minute": 0,
+        "month": 12,
+        "year": 2020
+    },
+    {
+
         "day": 16,
         "hour": 0,
         "inzidenz": 256.65,
@@ -195,6 +215,22 @@
         "day": 15,
         "hour": 0,
         "inzidenz": 272.86,
+        "minute": 0,
+        "month": 12,
+        "year": 2020
+    },
+    {
+        "day": 15,
+        "hour": 0,
+        "inzidenz": 272.86,
+        "minute": 0,
+        "month": 12,
+        "year": 2020
+    },
+    {
+        "day": 14,
+        "hour": 0,
+        "inzidenz": 306.41,
         "minute": 0,
         "month": 12,
         "year": 2020
@@ -312,6 +348,16 @@
         "year": 2020
     },
     {
+
+        "day": 3,
+        "hour": 0,
+        "inzidenz": 268.95,
+        "minute": 0,
+        "month": 12,
+        "year": 2020
+    },
+    {
+
         "day": 3,
         "hour": 0,
         "inzidenz": 268.95,
@@ -339,6 +385,22 @@
         "day": 2,
         "hour": 0,
         "inzidenz": 249.38,
+        "minute": 0,
+        "month": 12,
+        "year": 2020
+    },
+    {
+        "day": 2,
+        "hour": 0,
+        "inzidenz": 249.38,
+        "minute": 0,
+        "month": 12,
+        "year": 2020
+    },
+    {
+        "day": 1,
+        "hour": 0,
+        "inzidenz": 233.16,
         "minute": 0,
         "month": 12,
         "year": 2020
@@ -536,7 +598,25 @@
         "year": 2020
     },
     {
-        "day": 13,
+
+        "day": 30,
+        "hour": 0,
+        "inzidenz": 191.23,
+        "minute": 0,
+        "month": 11,
+        "year": 2020
+    },
+    {
+        "day": 27,
+        "hour": 0,
+        "inzidenz": 169.98,
+        "minute": 0,
+        "month": 11,
+        "year": 2020
+    },
+    {
+        "day": 27,
+
         "hour": 0,
         "inzidenz": 117.98,
         "minute": 0,
@@ -547,6 +627,32 @@
         "day": 13,
         "hour": 0,
         "inzidenz": 117.98,
+        "minute": 0,
+        "month": 11,
+        "year": 2020
+    },
+    {
+
+        "day": 26,
+        "hour": 0,
+        "inzidenz": 150.41,
+        "minute": 0,
+        "month": 11,
+        "year": 2020
+    },
+    {
+        "day": 25,
+        "hour": 0,
+        "inzidenz": 131.4,
+        "minute": 0,
+        "month": 11,
+        "year": 2020
+    },
+    {
+        "day": 25,
+
+        "hour": 0,
+        "inzidenz": 118.63,
         "minute": 0,
         "month": 11,
         "year": 2020
@@ -560,6 +666,142 @@
         "year": 2020
     },
     {
+
+        "day": 24,
+        "hour": 0,
+        "inzidenz": 134.75,
+        "minute": 0,
+        "month": 11,
+        "year": 2020
+    },
+    {
+        "day": 23,
+        "hour": 0,
+        "inzidenz": 123.01,
+        "minute": 0,
+        "month": 11,
+        "year": 2020
+    },
+    {
+        "day": 23,
+
+        "hour": 0,
+        "inzidenz": 120.31,
+        "minute": 0,
+        "month": 11,
+        "year": 2020
+    },
+    {
+        "day": 11,
+        "hour": 0,
+        "inzidenz": 120.31,
+        "minute": 0,
+        "month": 11,
+        "year": 2020
+    },
+    {
+
+        "day": 20,
+        "hour": 0,
+        "inzidenz": 125.81,
+        "minute": 0,
+        "month": 11,
+        "year": 2020
+    },
+    {
+        "day": 19,
+        "hour": 0,
+        "inzidenz": 119.1,
+        "minute": 0,
+        "month": 11,
+        "year": 2020
+    },
+    {
+        "day": 19,
+        "hour": 0,
+        "inzidenz": 107.44,
+        "minute": 0,
+        "month": 11,
+        "year": 2020
+    },
+    {
+        "day": 10,
+        "hour": 0,
+        "inzidenz": 107.44,
+        "minute": 0,
+        "month": 11,
+        "year": 2020
+    },
+    {
+
+        "day": 18,
+        "hour": 0,
+        "inzidenz": 125.81,
+        "minute": 0,
+        "month": 11,
+        "year": 2020
+    },
+    {
+        "day": 17,
+        "hour": 0,
+        "inzidenz": 118.54,
+        "minute": 0,
+        "month": 11,
+        "year": 2020
+    },
+    {
+        "day": 17,
+
+        "hour": 0,
+        "inzidenz": 106.88,
+        "minute": 0,
+        "month": 11,
+        "year": 2020
+    },
+    {
+        "day": 9,
+        "hour": 0,
+        "inzidenz": 106.88,
+        "minute": 0,
+        "month": 11,
+        "year": 2020
+    },
+    {
+
+        "day": 16,
+        "hour": 0,
+        "inzidenz": 115.18,
+        "minute": 0,
+        "month": 11,
+        "year": 2020
+    },
+    {
+        "day": 13,
+        "hour": 0,
+        "inzidenz": 117.98,
+        "minute": 0,
+        "month": 11,
+        "year": 2020
+    },
+    {
+        "day": 13,
+
+        "hour": 0,
+        "inzidenz": 102.96,
+        "minute": 0,
+        "month": 11,
+        "year": 2020
+    },
+    {
+        "day": 6,
+        "hour": 0,
+        "inzidenz": 102.96,
+        "minute": 0,
+        "month": 11,
+        "year": 2020
+    },
+    {
+
         "day": 12,
         "hour": 0,
         "inzidenz": 118.63,
@@ -577,21 +819,23 @@
     },
     {
         "day": 11,
+
         "hour": 0,
-        "inzidenz": 120.31,
+        "inzidenz": 91.21,
         "minute": 0,
         "month": 11,
         "year": 2020
     },
     {
-        "day": 10,
+        "day": 5,
         "hour": 0,
-        "inzidenz": 107.44,
+        "inzidenz": 91.21,
         "minute": 0,
         "month": 11,
         "year": 2020
     },
     {
+
         "day": 10,
         "hour": 0,
         "inzidenz": 107.44,
@@ -609,21 +853,23 @@
     },
     {
         "day": 9,
+
         "hour": 0,
-        "inzidenz": 106.88,
+        "inzidenz": 88.41,
         "minute": 0,
         "month": 11,
         "year": 2020
     },
     {
-        "day": 6,
+        "day": 4,
         "hour": 0,
-        "inzidenz": 102.96,
+        "inzidenz": 88.41,
         "minute": 0,
         "month": 11,
         "year": 2020
     },
     {
+
         "day": 6,
         "hour": 0,
         "inzidenz": 102.96,
@@ -641,21 +887,23 @@
     },
     {
         "day": 5,
+
         "hour": 0,
-        "inzidenz": 91.21,
+        "inzidenz": 88.97,
         "minute": 0,
         "month": 11,
         "year": 2020
     },
     {
-        "day": 4,
+        "day": 3,
         "hour": 0,
-        "inzidenz": 88.41,
+        "inzidenz": 88.97,
         "minute": 0,
         "month": 11,
         "year": 2020
     },
     {
+
         "day": 4,
         "hour": 0,
         "inzidenz": 88.41,
@@ -673,8 +921,9 @@
     },
     {
         "day": 3,
+
         "hour": 0,
-        "inzidenz": 88.97,
+        "inzidenz": 85.06,
         "minute": 0,
         "month": 11,
         "year": 2020
@@ -712,6 +961,22 @@
         "year": 2020
     },
     {
+        "day": 30,
+        "hour": 0,
+        "inzidenz": 74.98,
+        "minute": 0,
+        "month": 10,
+        "year": 2020
+    },
+    {
+        "day": 29,
+        "hour": 0,
+        "inzidenz": 68.83,
+        "minute": 0,
+        "month": 10,
+        "year": 2020
+    },
+    {
         "day": 29,
         "hour": 0,
         "inzidenz": 68.83,
@@ -739,6 +1004,22 @@
         "day": 28,
         "hour": 0,
         "inzidenz": 64.35,
+        "minute": 0,
+        "month": 10,
+        "year": 2020
+    },
+    {
+        "day": 28,
+        "hour": 0,
+        "inzidenz": 64.35,
+        "minute": 0,
+        "month": 10,
+        "year": 2020
+    },
+    {
+        "day": 27,
+        "hour": 0,
+        "inzidenz": 55.95,
         "minute": 0,
         "month": 10,
         "year": 2020
@@ -904,6 +1185,7 @@
         "year": 2020
     },
     {
+
         "day": 13,
         "hour": 0,
         "inzidenz": 16.79,
@@ -915,6 +1197,14 @@
         "day": 13,
         "hour": 0,
         "inzidenz": 16.79,
+        "minute": 0,
+        "month": 10,
+        "year": 2020
+    },
+    {
+        "day": 12,
+        "hour": 0,
+        "inzidenz": 15.67,
         "minute": 0,
         "month": 10,
         "year": 2020
@@ -952,6 +1242,14 @@
         "year": 2020
     },
     {
+        "day": 9,
+        "hour": 0,
+        "inzidenz": 13.99,
+        "minute": 0,
+        "month": 10,
+        "year": 2020
+    },
+    {
         "day": 8,
         "hour": 0,
         "inzidenz": 12.87,
@@ -963,6 +1261,22 @@
         "day": 8,
         "hour": 0,
         "inzidenz": 12.87,
+        "minute": 0,
+        "month": 10,
+        "year": 2020
+    },
+    {
+        "day": 8,
+        "hour": 0,
+        "inzidenz": 12.87,
+        "minute": 0,
+        "month": 10,
+        "year": 2020
+    },
+    {
+        "day": 7,
+        "hour": 0,
+        "inzidenz": 14.55,
         "minute": 0,
         "month": 10,
         "year": 2020
@@ -1000,6 +1314,14 @@
         "year": 2020
     },
     {
+        "day": 6,
+        "hour": 0,
+        "inzidenz": 17.91,
+        "minute": 0,
+        "month": 10,
+        "year": 2020
+    },
+    {
         "day": 5,
         "hour": 0,
         "inzidenz": 15.11,
@@ -1011,6 +1333,22 @@
         "day": 5,
         "hour": 0,
         "inzidenz": 15.11,
+        "minute": 0,
+        "month": 10,
+        "year": 2020
+    },
+    {
+        "day": 5,
+        "hour": 0,
+        "inzidenz": 15.11,
+        "minute": 0,
+        "month": 10,
+        "year": 2020
+    },
+    {
+        "day": 2,
+        "hour": 0,
+        "inzidenz": 12.31,
         "minute": 0,
         "month": 10,
         "year": 2020
