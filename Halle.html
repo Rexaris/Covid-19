@@ -5,9 +5,31 @@
 	<meta charset="UTF-8">
 	<title>Covid-19 Status Halle(Saale)</title>
 	<script src="Chart.bundle.min.js"></script>
+	<script src="hammer.min.js"></script>
+	<script src="chartjs-plugin-zoom.min.js"></script>
 	<script>
 	function createChart(data,data2)
 	{
+		var zoomPlugin = { 
+				zoom: {
+
+					pan: {
+
+						enabled: true,
+
+						mode: 'xy',
+					},
+
+					zoom: {
+
+						enabled: true,
+
+						mode: 'xy',
+
+
+					}
+				} 
+			};
 		var dataTmp=[];
 		var dataTmp2=[];
 		for(var i=0;i<data.length;i++)
@@ -35,6 +57,7 @@
 		
 		var ctx = document.getElementById('myChart');
 		var myChart = new Chart(ctx, {
+			
 			type: 'scatter',
 			data: {
 				datasets:[{
@@ -63,7 +86,8 @@
 							}
 						}
 					}]
-				}
+				},
+				plugins: zoomPlugin
 			}
 		});
 	}
@@ -86,7 +110,8 @@
 	<canvas id="myChart"></canvas>
 	<script language="JavaScript">
 		var xmlhttp = new XMLHttpRequest();
-		var xmlhttp2 = new XMLHttpRequest();
+		var xmlhttp2 = new XMLHttpRequest();		
+		
 		xmlhttp.onreadystatechange = function() {
 	      checkFinish(xmlhttp,xmlhttp2);
 		  if (this.readyState == 4 && this.status == 200) {
