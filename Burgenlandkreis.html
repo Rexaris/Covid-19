@@ -5,9 +5,32 @@
 	<meta charset="UTF-8">
 	<title>Covid-19 Status Burgenlandkreis</title>
 	<script src="Chart.bundle.min.js"></script>
+	<script src="hammer.min.js"></script>
+	<script src="chartjs-plugin-zoom.min.js"></script>
 	<script>
 	function createChart(data,data2)
 	{
+		var zoomPlugin = { 
+				zoom: {
+
+					pan: {
+
+						enabled: true,
+
+						mode: 'xy',
+					},
+
+					zoom: {
+
+						enabled: true,
+
+						mode: 'xy',
+
+
+					}
+				} 
+			};
+		
 		var dataTmp=[];
 		var dataTmp2=[];
 		for(var i=0;i<data.length;i++)
@@ -63,7 +86,8 @@
 							}
 						}
 					}]
-				}
+				},
+				plugins: zoomPlugin
 			}
 		});
 	}
