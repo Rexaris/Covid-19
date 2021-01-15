@@ -1,5 +1,37 @@
 [
     {
+        "day": 15,
+        "hour": 13,
+        "inzidenz": 311.02,
+        "minute": 0,
+        "month": 1,
+        "year": 2021
+    },
+    {
+        "day": 14,
+        "hour": 13,
+        "inzidenz": 316.42,
+        "minute": 0,
+        "month": 1,
+        "year": 2021
+    },
+    {
+        "day": 13,
+        "hour": 13,
+        "inzidenz": 325.16,
+        "minute": 0,
+        "month": 1,
+        "year": 2021
+    },
+    {
+        "day": 12,
+        "hour": 13,
+        "inzidenz": 335.97,
+        "minute": 0,
+        "month": 1,
+        "year": 2021
+    },
+    {
         "day": 11,
         "hour": 13,
         "inzidenz": 327.23,

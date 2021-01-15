@@ -187,7 +187,7 @@ try:
                         print(contenti2)
                     Inzidenz_i=extractLastFloat(tmpcontenti)        
                     #print(Inzidenz_i)
-                    print()
+                    #print()
                     
                 
                 contenti=contenti.next

@@ -55,7 +55,9 @@ while nextID not in IDs:
     
     soup=BeautifulSoup(mystr,'html.parser')
     ps=soup.find(class_="cms_news").find_all("p")
-    nextID=soup.find(class_="next")["href"][-5:]
+    nextclass=soup.find(class_="next")
+    if nextclass!=None:
+        nextID=nextclass["href"][-5:]
     
     
     
